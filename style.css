@@ -442,11 +442,7 @@ body::before,
   z-index: 5;
 }
 
-.reset{
-  position: relative;
-  z-index: 10;
-}
-
 #download {
   display: none;
 }
+
