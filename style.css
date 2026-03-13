@@ -1,0 +1,452 @@
+#envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
+  background-color: #d9534f; /* Warm romantic red */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+.flap {
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  /* a little smaller */
+  border-top: 98px solid #d9534f; /* Same romantic red */
+  /* a little larger */
+  transform-origin: top;
+  pointer-events: none;
+}
+
+.pocket {
+  border-left: 140px solid #f5a3a2; /* Soft pinkish red for the pocket */
+  border-right: 140px solid #f5a3a2;
+  border-bottom: 90px solid #ff6f61; /* Lighter romantic red */
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.letter {
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
+  border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+  font-family: "Dancing Script", cursive;
+}
+
+.letter:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.words {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
+  background-color: #ffe6e6; /* Light romantic tone */
+}
+
+.words.line1 {
+  top: 10%;
+  font-size: 0.5rem;
+  width: 20%;
+  height: 7%;
+  font-size: 0.7rem;
+}
+
+.words.line2 {
+  top: 30%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.words.line3 {
+  top: 50%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.words.line4 {
+  top: 70%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.close .letter {
+  transform: translateY(0px);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.open .letter {
+  transform: translateY(-100px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  pointer-events: none;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #e60073; /* Deep romantic pink */
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  pointer-events: none;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  -webkit-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  -moz-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  -webkit-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  -moz-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  -webkit-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  -moz-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+@keyframes slideUp {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -600px;
+  }
+}
+@-webkit-keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+@keyframes sideSway {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial, sans-serif;
+  background:#061427; /* azul marino profundo */
+  overflow:hidden;
+  position:relative;
+}
+
+/* NEBLINA CINEMÁTICA SUAVE */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  background: radial-gradient(circle at 50% 50%, rgba(20,40,90,0.4), transparent 70%);
+  animation: mist 30s infinite alternate ease-in-out;
+}
+
+/* LUCES MÁGICAS */
+/* CAPAS DE ESTRELLAS */
+
+.stars,
+.stars2,
+.stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ⭐ PEQUEÑAS (muchas, sutiles) */
+.stars {
+  box-shadow:
+    10vw 20vh 4px 2px rgba(255,255,255,0.8),
+    30vw 80vh 4px 2px rgba(255,255,255,0.7),
+    50vw 40vh 4px 2px rgba(200,220,255,0.8),
+    70vw 60vh 4px 2px rgba(255,255,255,0.7),
+    90vw 10vh 4px 2px rgba(180,210,255,0.8),
+    15vw 70vh 4px 2px rgba(255,255,255,0.7),
+    40vw 30vh 4px 2px rgba(200,220,255,0.8),
+    80vw 90vh 4px 2px rgba(255,255,255,0.7);
+  animation: twinkleSmall 4s infinite alternate ease-in-out;
+}
+
+/* ⭐⭐ MEDIANAS */
+.stars2 {
+  box-shadow:
+    20vw 30vh 8px 4px rgba(255,255,255,0.9),
+    60vw 70vh 8px 4px rgba(200,220,255,0.9),
+    85vw 50vh 8px 4px rgba(255,255,255,0.9),
+    35vw 15vh 8px 4px rgba(180,210,255,0.9);
+  animation: twinkleMedium 6s infinite alternate ease-in-out;
+}
+
+/* ⭐⭐⭐ GRANDES (pocas pero protagonistas) */
+.stars3 {
+  box-shadow:
+    25vw 60vh 14px 6px rgba(255,255,255,1),
+    75vw 25vh 14px 6px rgba(200,230,255,1);
+  animation: twinkleBig 8s infinite alternate ease-in-out;
+}
+
+/* MOVIMIENTO LIBRE */
+@keyframes floatMagic{
+  0%   { transform: translate(0px,0px) scale(1); }
+  25%  { transform: translate(-40px,30px) scale(1.05); }
+  50%  { transform: translate(35px,-25px) scale(1); }
+  75%  { transform: translate(-20px,40px) scale(1.08); }
+  100% { transform: translate(30px,-30px) scale(1); }
+}
+
+/* PARPADEO SUAVE */
+@keyframes twinkleSmall {
+  from { opacity: 0.4; }
+  to   { opacity: 0.8; }
+}
+
+@keyframes twinkleMedium {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+@keyframes twinkleBig {
+  from { opacity: 0.7; }
+  to   { opacity: 1; }
+}
+
+/* NEBLINA EN MOVIMIENTO */
+@keyframes mist{
+  0%   { transform: translate(-20px,-20px); }
+  100% { transform: translate(20px,20px); }
+}
+
+.envlope-wrapper {
+  height: 380px;
+}
+
+.reset {
+  text-align: center;
+}
+
+.reset button {
+  font-weight: 800;
+  font-style: normal;
+  transition: all 0.1s linear;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: solid 2px #d9534f;
+  border-radius: 4px;
+  color: #d9534f;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 5px;
+  padding: 10px;
+  line-height: 1em;
+  text-decoration: none;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.reset button:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.shooting-star{
+  position:fixed;
+  top:10%;
+  left:-400px;
+  width:10px;
+  height:10px;
+  background:white;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:1;
+
+  box-shadow:
+    0 0 30px white,
+    0 0 60px white,
+    0 0 120px rgba(180,220,255,1),
+    0 0 200px rgba(120,180,255,0.9);
+
+  animation: shoot 8s cubic-bezier(.2,.6,.3,1) forwards;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate3d(-30vw, -30vh, 0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(130vw, 130vh, 0);
+    opacity: 0;
+  }
+}
+
+/* COLA ÉPICA */
+.shooting-star::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:-500px;
+  transform:translateY(-50%);
+  width:500px;
+  height:8px;
+
+  background:linear-gradient(
+    to right,
+    transparent,
+    rgba(120,180,255,0.4),
+    rgba(180,220,255,0.8),
+    white
+  );
+
+  filter:blur(6px);
+}
+
+/* ORDEN DE CAPAS DEFINITIVO */
+
+body::before,
+.stars,
+.stars2,
+.stars3{
+  z-index: 0;
+}
+
+.shooting-star{
+  z-index: 1;
+}
+
+#envelope{
+  position: relative;
+  z-index: 5;
+}
+
+.reset{
+  position: relative;
+  z-index: 10;
+}
+
+#download {
+  display: none;
+}
